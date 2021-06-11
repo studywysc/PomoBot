@@ -21,7 +21,10 @@ async def cmd_permchek(ctx):
     if not arg.isdigit():
         return await ctx.error_reply("**Usage:** `permcheck <userid>`")
 
-    member = ctx.guild.get_member(int(arg))
+    try:
+        member = await ctx.guild.fetch_member(int(arg))
+    except discord.HTTPException:
+        member = None
     if member is None:
         return await ctx.error_reply("No member with id `{}` found.".format(arg))
 

@@ -67,7 +67,7 @@ async def cmd_genmessagestats(ctx):
     await out_msg.delete()
 
     guild_stat_table[ctx.guild.id] = stats
-    await ctx.embedreply("The stored stats have been updated!")
+    await ctx.embed_reply("The stored stats have been updated!")
 
 
 @cmd("userstats",
