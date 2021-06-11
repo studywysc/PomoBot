@@ -21,18 +21,18 @@ group_hints = {
     'Meta': "*Information about me!*"
 }
 standard_group_order = (
-    ('Timer Usage', 'Timer Control', 'Personal Settings'),
+    ('Timer Usage', 'Timer Control', 'Wysc', 'Personal Settings'),
     ('Registry', 'Saved Patterns'),
     ('Meta', 'Guides'),
 )
 admin_group_order = (
-    ('Group Admin', 'Server Configuration', 'Meta', 'Guides'),
-    ('Timer Usage', 'Timer Control', 'Personal Settings'),
+    ('Group Admin', 'Server Configuration', 'Wysc Admin', 'Meta', 'Guides'),
+    ('Timer Usage', 'Timer Control', 'Wysc', 'Personal Settings'),
     ('Registry', 'Registry Admin', 'Saved Patterns'),
 )
 
 # Help embed format
-title = "PomoBot Usage Manual and Command List"
+title = "CafePomodoro Usage Manual and Command List"
 header = """
 Flexible study group system with Pomodoro-style timers!
 Supports multiple groups and custom timer patterns.

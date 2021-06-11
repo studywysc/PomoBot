@@ -155,3 +155,31 @@ CREATE VIEW session_patterns AS
   FROM sessions
   LEFT JOIN patterns USING (patternid)
   LEFT JOIN users USING (userid);
+
+
+-- Wysc Custom
+
+-- Focus channel system
+CREATE TABLE guild_focus_roles (
+  guildid INTEGER NOT NULL PRIMARY KEY,
+  focus_roleid INTEGER NOT NULL
+);
+
+CREATE TABLE guild_focus_channels (
+  guildid INTEGER NOT NULL,
+  channelid INTEGER NOT NULL,
+  PRIMARY KEY (guildid, channelid)
+);
+
+CREATE TABLE guild_focus_channels_extra (
+  guildid INTEGER NOT NULL,
+  channelid INTEGER NOT NULL,
+  PRIMARY KEY (guildid, channelid)
+);
+
+CREATE TABLE member_focus_extra (
+  guildid INTEGER NOT NULL,
+  userid INTEGER NOT NULL,
+  channelid INTEGER NOT NULL,
+  FOREIGN KEY (guildid, channelid) REFERENCES guild_focus_channels_extra (guildid, channelid) ON DELETE CASCADE
+);
